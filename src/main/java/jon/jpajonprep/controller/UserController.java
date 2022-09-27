@@ -13,8 +13,13 @@ public class UserController { // Mathias.
     public ResponseEntity<Flag> findFlag(@RequestBody FlagRequest flagRequest){
         Flag flag = new Flag();
         System.out.println("received request " + flagRequest.getRequest());
-        flag.setMessage("Flag is here! ##### " + flagRequest.getRequest() );
+        flag.setMessage("Flag is here! TU+TU " + flagRequest.getRequest() );
         return new ResponseEntity<>(flag, HttpStatus.OK);
+    }
+
+    @GetMapping("/test")
+    public ResponseEntity<String> check(){
+        return new ResponseEntity<>("Check checks out", HttpStatus.OK);
     }
 
 }
